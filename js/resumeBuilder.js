@@ -135,6 +135,16 @@ projects.display();
 
 var education = {
   "schools": [
+    {
+  "name": "University of Minnesota",
+  "city": "Minneapolis, MN",
+  "location": "University of Minnesota, Minneapolis, MN 55455",
+  "degree": "BA",
+  "major": "English",
+  "minor": "Japanese",
+  "dates": "2009-2011",
+  "url": "http://www.umn.edu"
+   },
   {
     "name": "Normandale Community College",
     "city": "Bloomington, MN",
@@ -145,16 +155,6 @@ var education = {
     "dates": "2014-current",
     "url": "http://www.normandale.edu"
   },
-  {
-  "name": "University of Minnesota",
-  "city": "Minneapolis, MN",
-  "location": "University of Minnesota, Minneapolis, MN 55455",
-  "degree": "BA",
-  "major": "English",
-  "minor": "Japanese",
-  "dates": "2009-2011",
-  "url": "http://www.umn.edu"
-   },
    {
     "name": "Inver Hills Community College",
     "city": "Inver Grove Heights, MN",
@@ -178,13 +178,14 @@ var education = {
     "school": "Udacity",
     "dates": "2014",
     "url": "https://www.udacity.com/course/ud804",
-    "description": ""
+    "description": "Learned Javascript Basics"
   },
   {
     "title": "Intro to HTML and CSS",
     "school": "Udacity",
     "dates": "2014",
-    "url": "https://www.udacity.com/course/ud304"
+    "url": "https://www.udacity.com/course/ud304",
+    "description": "learned web responsiveness"
   }
   ]
 };

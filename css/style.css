@@ -7,6 +7,7 @@
 
 
 .education-entry, .work-entry, .project-entry {
+  color: #1FB140;
   padding-left: 5%;
   padding-right: 5%;
 }
@@ -51,7 +52,7 @@ h2, h3, h4, h5 {
 .date-text {
   font-style: italic;
   font-size: 14px;
-  color: #FFFFFF;
+  color: #A6B6FF;
   line-height: 16px;
   float: left;
 }
@@ -109,7 +110,6 @@ a {
 
 #skills {
   display: none;
-  padding-right: 70%;
 }
 
 .light-green {
@@ -276,17 +276,11 @@ span {
   #letsConnect {
     margin-top: 5%;
   }
-  #skills {
-    padding-right: 60%
-  }
 }
 
 @media only screen and (max-width:900px) {
   .biopic {
     width: 175px;
-  }
-  #skills {
-    padding-right: 60%;
   }
 }
 
@@ -300,9 +294,6 @@ span {
   }
   .welcome-message {
     display: none;
-  }
-  #skills{
-    padding-right: 40%;
   }
   #header {
     background-color: darkcyan;
@@ -319,25 +310,10 @@ span {
   }
 }
 
-@media only screen and (max-width: 1100px) {
-  #skills {
-    padding-right: 65%;
-  }
-}
-
 @media only screen and (max-width: 825px) {
-  #skills {
-    padding-right: 45%;
-  }
   img:hover {
     height: auto;
     width: auto;
-  }
-}
-
-@media only screen and (max-width: 1210px) {
-  #skills {
-    padding-right: 40%;
   }
 }
 
