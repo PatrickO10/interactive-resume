@@ -45,10 +45,10 @@ var bio = {
 	"contacts": {
     "mobile": "612-203-1916",
 		"email": "patrickorth10@gmail.com",
-		"github": "PatrickO10",
-		"twitter": "@patrick_orth",
-    "blog": "my blog",
-    "linkedin": "my linkedin",
+		"github": "https://github.com/PatrickO10",
+		"twitter": "https://twitter.com/patrick_orth",
+    "blog": "http://findingthingsout.blogspot.com/",
+    "linkedin": "https://www.linkedin.com/pub/patrick-orth/97/91a/221",
 		"location": "Edina, MN"
 	},
 	"welcomeMessage" : " Welcome to my resume",

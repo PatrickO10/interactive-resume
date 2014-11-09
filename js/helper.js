@@ -22,11 +22,11 @@ var HTMLheaderRole = "<span class='white-text'>%data%</span><hr/>";
 var HTMLcontactGeneric = "<li class='flex-item'><span class='white-text'>%contact%</span><span class='light-teal-text'>%data%</span></li>";
 var HTMLmobile = "<li class='flex-item'><span class='white-text'><i class='ion-android-call'></i> mobile</span><a href='tel: +1-612-203-1916' class='contacts-a'><span class='light-teal-text'>%data%</span></a></li>";
 var HTMLemail = "<li class='flex-item'><span class='white-text'><i class='ion-email'></i> email</span><span class='light-teal-text'>%data%</span></li>";
-var HTMLtwitter = "<li class='flex-item'><span class='white-text'><i class='ion-social-twitter'></i> twitter</span><a href='https://twitter.com/patrick_orth' class='contacts-a'><span class='light-teal-text'>%data%</span></a></li>";
-var HTMLgithub = "<li class='flex-item'><span class='white-text'><i class='ion-social-github'></i> github</span><a href='https://github.com/PatrickO10' class='contacts-a'><span class='light-teal-text'>%data%</span></a></li>";
-var HTMLblog = "<li class='flex-item'><span class='white-text'><i class='ion-android-book'></i> blog</span><a href='http://findingthingsout.blogspot.com/' class='contacts-a'><span class='light-teal-text'>%data%</span></a></li>";
-var HTMLlocation = "<li class='flex-item'><span class='white-text'><i class='ion-map'></i> location</span><span class='light-teal-text'>%data%</span></li>";
-var HTMLlinkedin = "<li class='flex-item'><span class='white-text'><i class='ion-social-linkedin'></i> linkedIn</span><a href='https://www.linkedin.com/pub/patrick-orth/97/91a/221' class='contacts-a'><span class='light-teal-text'>%data%</span></a></li>";
+var HTMLtwitter = "<li class='flex-item'><span class='white-text'><a href='%data%' class='contacts-a'><i class='ion-social-twitter'></i> twitter</a></span></li>";
+var HTMLgithub = "<li class='flex-item'><span class='white-text'><a href='%data%' class='contacts-a'><i class='ion-social-github'></i> github</a></span></li>";
+var HTMLblog = "<li class='flex-item'><span class='white-text'><a href='%data%' class='contacts-a'><i class='ion-android-book'></i> blog</a></span></li>";
+var HTMLlocation = "<li class='flex-item'><span class='white-text' class='contacts-a'><i class='ion-map'></i> location</span><span class='light-teal-text'>%data%</span></li>";
+var HTMLlinkedin = "<li class='flex-item'><span class='white-text'><a href='%data%' class='contacts-a'><i class='ion-social-linkedin'></i> linkedIn</a></span></li>";
 
 
 var HTMLbioPic = "<img src='%data%' class='biopic'>";
