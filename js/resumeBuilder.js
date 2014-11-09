@@ -7,7 +7,7 @@ var work = {
             "employer": "USBANK",
             "title": "Teller",
             "location": "9633 Lyndale Ave S, Bloomington MN",
-            "dates": "December 2012 to December 2013",
+            "dates": "2012-2013",
             "description": "Sales, customer service, control of branch money"
         },
         {
@@ -15,7 +15,7 @@ var work = {
             "title": "Summer Hire",
             "location": "44.867259,-93.000497",
             "city": "St. Paul Park",
-            "dates": ["May-September 2009", "May-September 2010"],
+            "dates": ["Summer 2009", " Summer 2010"],
             "description": "general maintenance, lawn care, painting, fueling equipment/trucks"
         },
     ]
@@ -89,21 +89,21 @@ bio.display();
 var projects = {
     "projects" : [
     {
-    "title": "Mock Portfolio",
-    "dates": "2014",
-    "description": "Learned HTML and CSS by creating a responsive website.",
-    "images": ["images/mockimg (2).png", "images/mockimg.png", "images/mockcodeimg.png"]
-    },
-    {
       "title": "Interactive Resume",
       "dates": "2014",
       "description": "Learned Javascript and how to use it with HTML and CSS",
       "images": ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
     },
     {
+    "title": "Mock Portfolio",
+    "dates": "2014",
+    "description": "Learned HTML and CSS by creating a responsive website.",
+    "images": ["images/mockimg (2).png", "images/mockimg.png", "images/mockcodeimg.png"]
+    },
+    {
       "title": "CS101 project",
       "dates": "2014",
-      "description": "Learned python while building a network around strings and manipulating said network",
+      "description": "Learned python while building a social network",
       "images": ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
     }
   ]
@@ -185,7 +185,7 @@ var education = {
     "school": "Udacity",
     "dates": "2014",
     "url": "https://www.udacity.com/course/ud304",
-    "description": "learned web responsiveness"
+    "description": "Learned web responsiveness"
   }
   ]
 };

@@ -20,7 +20,7 @@ var HTMLheaderName = "<h1 id='name'>%data%</h1>";
 var HTMLheaderRole = "<span class='white-text'>%data%</span><hr/>";
 
 var HTMLcontactGeneric = "<li class='flex-item'><span class='white-text'>%contact%</span><span class='light-teal-text'>%data%</span></li>";
-var HTMLmobile = "<li class='flex-item'><span class='white-text'><i class='ion-android-call'></i> mobile</span><span class='light-teal-text'>%data%</span></li>";
+var HTMLmobile = "<li class='flex-item'><span class='white-text'><i class='ion-android-call'></i> mobile</span><a href='tel: +1-612-203-1916' class='contacts-a'><span class='light-teal-text'>%data%</span></a></li>";
 var HTMLemail = "<li class='flex-item'><span class='white-text'><i class='ion-email'></i> email</span><span class='light-teal-text'>%data%</span></li>";
 var HTMLtwitter = "<li class='flex-item'><span class='white-text'><i class='ion-social-twitter'></i> twitter</span><a href='https://twitter.com/patrick_orth' class='contacts-a'><span class='light-teal-text'>%data%</span></a></li>";
 var HTMLgithub = "<li class='flex-item'><span class='white-text'><i class='ion-social-github'></i> github</span><a href='https://github.com/PatrickO10' class='contacts-a'><span class='light-teal-text'>%data%</span></a></li>";
@@ -36,21 +36,21 @@ var HTMLskillsStart = "<h3 id='skillsH3'>Skills at a Glance:</h3><ul id='skills'
 var HTMLskills = "<li class='flex-item-skills'><span class='light-teal-text'>%data%</span></li>"; // changed it to flex-item-skills so it wouldn't have the hover
 
 var HTMLworkStart = "<div class='work-entry'></div>";
-var HTMLworkEmployer = "<a href='%url%'>%data%";
+var HTMLworkEmployer = "<a href='%url%' class='text-large'>%data%";
 var HTMLworkTitle = " - %data%</a>";
 var HTMLworkDates = "<div class='date-text'>%data%</div>";
 var HTMLworkLocation = "<div class='location-text'>%data%</div>";
-var HTMLworkDescription = "<p><br>%data%</p>";
+var HTMLworkDescription = "<p class='text-medium'><br>%data%</p>";
 
 var HTMLprojectStart = "<div class='project-entry'></div>";
-var HTMLprojectTitle = "<a href='%url%'>%data%</a>";
+var HTMLprojectTitle = "<a href='%url%' class='text-large'>%data%</a>";
 var HTMLprojectDates = "<div class='date-text'>%data%</div>";
 var HTMLprojectDescription = "<p><br>%data%</p>";
-var HTMLprojectImage = "<img src='%data%' class='img-content'>";
+var HTMLprojectImage = "<img src='%data%' class='img-content' alt='project image content'>";
 
 var HTMLschoolStart = "<div class='education-entry'></div>";
-var HTMLschoolName = "<a href='%url%'>%data%";
-var HTMLschoolDegree = "<br> --  %data%</br></a>";
+var HTMLschoolName = "<a href='%url%' class='text-large'>%data%";
+var HTMLschoolDegree = " --  %data%</a>";
 var HTMLschoolDates = "<div class='date-text'>%data%</div>";
 var HTMLschoolLocation = "<div class='location-text'>%data%</div>";
 var HTMLschoolMajor = "<em><br>Major: %data%</em>";
@@ -58,7 +58,7 @@ var HTMLschoolMinor = "<em><br>Minor: %data%</em>";  // added minor
 
 
 var HTMLonlineClasses = "<h3>Online Classes</h3>";
-var HTMLonlineTitle = "<a href='%url%'>%data%";
+var HTMLonlineTitle = "<a href='%url%' class='text-large'>%data%";
 var HTMLonlineSchool = " - %data%</a>";
 var HTMLonlineDates = "<div class='date-text'>%data%</div>";
 var HTMLonlineURL = "<br><a href='%url%'>%data%</a>";
@@ -66,7 +66,7 @@ var HTMLonlineDescription = "<p><br>%data%</p>"
 
 var internationalizeButton = "<button>Internationalize</button>";
 var googleMap = "<div id='map'></div>";
-var HTMLmapbgImg = "<img class='mapbgimg' src='%data%'>"; // var that will add background image to mapDiv
+var HTMLmapbgImg = "<img class='mapbgimg' src='%data%' alt='map background image'>"; // var that will add background image to mapDiv
 
 
 /*
