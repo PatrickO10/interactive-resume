@@ -108,6 +108,7 @@ $(document).click(function(loc) {
 var map; // declares a global map variable
 var panorama; // declares a global panorama variable
 var eventLoc; // declares a global eventLoc variable
+var panoID; // declares a global panoID variable
 
 
 /*
@@ -133,9 +134,9 @@ function initializeMap() {
   svBackground(address) sets the background of a streetview when you click on a pin, 
   appending it to the body.
   */
-  function svBackground(address) {
+  function svBackground() {
     // streetviewUrl gets the url where the streetview is located
-    var streetviewUrl = 'https://maps.googleapis.com/maps/api/streetview?size=640x400&location=' + address + '&pitch=-0.76' + '';
+    var streetviewUrl = 'https://maps.googleapis.com/maps/api/streetview?size=640x400&pano=' + panoID + '&pitch=-0.76' + '';
     console.log(streetviewUrl);
     var formattedImg = HTMLmapbgImg.replace('%data%', streetviewUrl); // replaces data
     $('body').append(formattedImg); // appends it to body
@@ -149,7 +150,9 @@ function initializeMap() {
   function processSVData(data, status) {
     if (status == google.maps.StreetViewStatus.OK) {
       var panorama = new google.maps.StreetViewPanorama(document.getElementById('pano'));
-      panorama.setPano(data.location.pano);
+      panorama.setPano(data.location.pano); // Sets the panorama to the unique pano id
+      panoID = data.location.pano;  // Changes the panoID to the unique pano id that was clicked
+      svBackground();   // Calls the svBackground function.
       panorama.setPov({
         heading: 25,
         pitch: -0.76
@@ -229,7 +232,7 @@ function initializeMap() {
     // getPanoramaByLocation will return the nearest pano when the
     // given radius is 50 meters or less.
     google.maps.event.addListener(marker, 'click', function(event) {
-      infoWindow.open(map, marker, svBackground(address));
+      infoWindow.open(map, marker);
       eventLoc = event.latLng; // gives the latlng of where user clicked
       meters = 50;
       sv.getPanoramaByLocation(eventLoc, meters, processSVData);
