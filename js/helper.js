@@ -106,11 +106,9 @@ $(document).click(function(loc) {
 
 
 var map; // declares a global map variable
-// var panorama; // declares a global panorama variable
-// var sv = new google.maps.StreetViewService();
+var panorama; // declares a global panorama variable
+var eventLoc; // declares a global eventLoc variable
 
-
-var panorama;
 
 /*
 Start here! initializeMap() is called when page is loaded.
@@ -131,6 +129,40 @@ function initializeMap() {
   // <div id="map">, which is appended as part of an exercise late in the course.
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
 
+  /*
+  svBackground(address) sets the background of a streetview when you click on a pin, 
+  appending it to the body.
+  */
+  function svBackground(address) {
+    // streetviewUrl gets the url where the streetview is located
+    var streetviewUrl = 'https://maps.googleapis.com/maps/api/streetview?size=640x400&location=' + address + '&pitch=-0.76' + '';
+    console.log(streetviewUrl);
+    var formattedImg = HTMLmapbgImg.replace('%data%', streetviewUrl); // replaces data
+    $('body').append(formattedImg); // appends it to body
+  }
+
+  /*
+  processSVData(data, status) makes sure there is a streetview. If so, it sets 
+  the pano and settings; otherwise, it recursively goes through until it finds one.
+  */
+
+  function processSVData(data, status) {
+    if (status == google.maps.StreetViewStatus.OK) {
+      var panorama = new google.maps.StreetViewPanorama(document.getElementById('pano'));
+      panorama.setPano(data.location.pano);
+      panorama.setPov({
+        heading: 25,
+        pitch: -0.76
+      });
+      panorama.setVisible(true);
+      if (meters != 50) {
+        alert('Street View data not found for this location, but here is a Street View data ' + meters + ' meters near it.');
+      }
+    } else {
+        meters = meters + 50; // increases the meters to search wider.
+        sv.getPanoramaByLocation(eventLoc, meters, processSVData);
+    }
+  }
 
 
   /*
@@ -174,20 +206,8 @@ function initializeMap() {
     var lon = placeData.geometry.location.B; // longitude from the place service
     var name = placeData.formatted_address; // name of the place from the place service
     var bounds = window.mapBounds; // current boundaries of the map window
-
-    // added variables to implement my background streetview image
     var address = lat + ',' + lon; // lat/lng for google maps background image
-    var panoramaLoc = new google.maps.LatLng(lat, lon); // location of the panorama
-
-    // panoramaOptions is an object with the specific streetview and point-of-view of the panorama
-    var panoramaOptions = {
-      position: panoramaLoc,
-      pov: {
-          heading: 34,
-          pitch: 10
-          }
-      };
-      var pinImg = 'images/Map-Marker-Ball-Azure-icon.png';
+    var pinImg = 'images/Map-Marker-Ball-Azure-icon.png'; // Image for the pins
 
     // marker is an object with additional data about the pin for a single location
     var marker = new google.maps.Marker({
@@ -204,55 +224,16 @@ function initializeMap() {
       content: name
     });
 
-    
-    /*
-    function initializePano() {
-    // var fenway = new google.maps.LatLng(42.345573, -71.098326);
-    
 
-    var panoramaOptions = {
-      position: panoramaLoc,
-      pov: {
-        heading: 34,
-        pitch: 10
-      }
-    };
-    var panorama = new google.maps.StreetViewPanorama(document.getElementById('pano'), panoramaOptions);
-    map.setStreetView(panorama);
-    }
-*/  
     // hmmmm, I wonder what this is about...
+    // getPanoramaByLocation will return the nearest pano when the
+    // given radius is 50 meters or less.
     google.maps.event.addListener(marker, 'click', function(event) {
       infoWindow.open(map, marker, svBackground(address));
-      sv.getPanoramaByLocation(event.latLng, 50, processSVData);
-      
-      //google.maps.event.addDomListener(window, 'load', initializePano);
-      // creates a new streetviewPanorama for that pin when you click on it
-      //panorama = new google.maps.StreetViewPanorama(document.getElementById('pano'), panoramaOptions);
-/*
-      // streetviewUrl gets the url where the streetview is located
-      var streetviewUrl = 'https://maps.googleapis.com/maps/api/streetview?size=640x400&location=' + address + '&pitch=-0.76' + '';
-      console.log(streetviewUrl);
-      var formattedImg = HTMLmapbgImg.replace('%data%', streetviewUrl); // replaces data
-      $('body').append(formattedImg); // appends it to body
-      //sv.getPanoramaByLocation(event.latLng, 50, processSVData);*/
+      eventLoc = event.latLng; // gives the latlng of where user clicked
+      meters = 50;
+      sv.getPanoramaByLocation(eventLoc, meters, processSVData);
     });
-
-
-    function processSVData(data, status) {
-      if (status == google.maps.StreetViewStatus.OK) {
-        var panorama = new google.maps.StreetViewPanorama(document.getElementById('pano'));
-        panorama.setPano(data.location.pano);
-        panorama.setPov({
-          heading: 25,
-          pitch: -0.76
-          });
-        panorama.setVisible(true);
-    } else {
-      alert('Street View data not found for this location.');
-      }
-    }
-
 
     // this is where the pin actually gets added to the map.
     // bounds.extend() takes in a map location object
@@ -272,7 +253,6 @@ function initializeMap() {
       createMapMarker(results[0])
     }
   }
-
 
   /*
   pinPoster(locations) takes in the array of locations created by locationFinder()
@@ -298,6 +278,7 @@ function initializeMap() {
       service.textSearch(request, callback);
     }
   }
+  
 
   // Sets the boundaries of the map based on pin locations
   window.mapBounds = new google.maps.LatLngBounds();
@@ -311,7 +292,6 @@ function initializeMap() {
 
 };
 
-    //google.maps.event.addDomListener(window, 'load', initializePano); //test
 /*
 Uncomment all the code below when you're ready to implement a Google Map!
 */

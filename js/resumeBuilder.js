@@ -13,7 +13,7 @@ var work = {
         {
             "employer": "MARATHON PETROLEUM COMPANY (Now Northern Tier Energy)",
             "title": "Summer Hire",
-            "location": "44.867259,-93.000497",
+            "location": "459 3rd St, St Paul Park, MN 55071",
             "city": "St. Paul Park",
             "dates": ["Summer 2009", " Summer 2010"],
             "description": "general maintenance, lawn care, painting, fueling equipment/trucks"
@@ -148,8 +148,7 @@ var education = {
   {
     "name": "Normandale Community College",
     "city": "Bloomington, MN",
-    "location": "9710 County Rd 17 Bloomington, Minnesota, Bloomington, MN",
-    "geoLocation": "44.828827,-93.3294897",
+    "location": "Normandale Community College, Bloomington, MN",
     "degree": "CS degree",
     "major": "Computer Science",
     "dates": "2014-current",
@@ -249,92 +248,3 @@ $(document).click(function(loc) {
 });
 
 $("#mapDiv").append(googleMap);
-
-//testing
-/*
-function initializePano() {
-  // var fenway = new google.maps.LatLng(42.345573, -71.098326);
-  var fenway = new google.maps.LatLng(address);
-
-  var panoramaOptions = {
-    position: fenway,
-    pov: {
-      heading: 34,
-      pitch: 10
-    }
-  };
-  var panorama = new google.maps.StreetViewPanorama(document.getElementById('pano'), panoramaOptions);
-  map.setStreetView(panorama);
-}
-*/
-//google.maps.event.addDomListener(window, 'load', initializePano); 
-
-//var map;
-//var berkeley = new google.maps.LatLng(44.828827,-93.3294897);
-/*
-var sv = new google.maps.StreetViewService();
-
-var panorama;
-
-function initializePano() {
-
-  panorama = new google.maps.StreetViewPanorama(document.getElementById('pano'));
-
-  // Set up the map
-  /*
-  var mapOptions = {
-    center: berkeley,
-    zoom: 16,
-    streetViewControl: false
-  };
-  map = new google.maps.Map(document.getElementById('map'), mapOptions);
-  */
-
-  // getPanoramaByLocation will return the nearest pano when the
-  // given radius is 50 meters or less.
-  /*
-  google.maps.event.addListener(map, 'click', function(event) {
-      sv.getPanoramaByLocation(event.latLng, 50, processSVData);
-  });
-}
-
-function processSVData(data, status) {
-  if (status == google.maps.StreetViewStatus.OK) {
-    var marker = new google.maps.Marker({
-      position: data.location.latLng,
-      map: map,
-      title: data.location.description
-    });
-
-    panorama.setPano(data.location.pano);
-    panorama.setPov({
-      heading: 270,
-      pitch: 0
-    });
-    panorama.setVisible(true);
-
-    google.maps.event.addListener(marker, 'click', function() {
-
-      var markerPanoID = data.location.pano;
-      // Set the Pano to use the passed panoID
-      panorama.setPano(markerPanoID);
-      panorama.setPov({
-        heading: 270,
-        pitch: 0
-      });
-      panorama.setVisible(true);
-    });
-  } else {
-    alert('Street View data not found for this location.');
-  }
-}
-
-//google.maps.event.addDomListener(window, 'load', initializePano); */
-
-function svBackground(address) {
-  // streetviewUrl gets the url where the streetview is located
-  var streetviewUrl = 'https://maps.googleapis.com/maps/api/streetview?size=640x400&location=' + address + '&pitch=-0.76' + '';
-  console.log(streetviewUrl);
-  var formattedImg = HTMLmapbgImg.replace('%data%', streetviewUrl); // replaces data
-  $('body').append(formattedImg); // appends it to body
-}
