@@ -21,7 +21,7 @@ var HTMLheaderRole = "<span class='white-text'>%data%</span><hr/>";
 
 var HTMLcontactGeneric = "<li class='flex-item'><span class='white-text'>%contact%</span><span class='light-teal-text'>%data%</span></li>";
 var HTMLmobile = "<li class='flex-item'><span class='white-text'><i class='ion-android-call'></i> mobile</span><a href='tel: +1-612-203-1916' class='contacts-a'><span class='light-teal-text'>%data%</span></a></li>";
-var HTMLemail = "<li class='flex-item'><span class='white-text'><i class='ion-email'></i> email</span><span class='light-teal-text'>%data%</span></li>";
+var HTMLemail = "<li class='flex-item'><span class='white-text'><i class='ion-email'></i> email</span><a href='mailto:patrickorth10@gmail.com' class='contacts-a'><span class='light-teal-text'>%data%</span></a></li>";
 var HTMLtwitter = "<li class='flex-item'><span class='white-text'><a href='%data%' class='contacts-a'><i class='ion-social-twitter'></i> twitter</a></span></li>";
 var HTMLgithub = "<li class='flex-item'><span class='white-text'><a href='%data%' class='contacts-a'><i class='ion-social-github'></i> github</a></span></li>";
 var HTMLblog = "<li class='flex-item'><span class='white-text'><a href='%data%' class='contacts-a'><i class='ion-android-book'></i> blog</a></span></li>";
@@ -49,6 +49,7 @@ var HTMLprojectDescription = "<p><br>%data%</p>";
 var HTMLprojectImage = "<img src='%data%' class='img-content' alt='project image content'>";
 
 var HTMLschoolStart = "<div class='education-entry'></div>";
+var HTMLschoolUniversity = "<h3>University and Colleges Attended</h3>";
 var HTMLschoolName = "<a href='%url%' class='text-large'>%data%";
 var HTMLschoolDegree = " --  %data%</a>";
 var HTMLschoolDates = "<div class='date-text'>%data%</div>";
@@ -61,7 +62,6 @@ var HTMLonlineClasses = "<h3>Online Classes</h3>";
 var HTMLonlineTitle = "<a href='%url%' class='text-large'>%data%";
 var HTMLonlineSchool = " - %data%</a>";
 var HTMLonlineDates = "<div class='date-text'>%data%</div>";
-var HTMLonlineURL = "<br><a href='%url%'>%data%</a>";
 var HTMLonlineDescription = "<p><br>%data%</p>"
 
 var internationalizeButton = "<button>Internationalize</button>";
@@ -117,7 +117,6 @@ Start here! initializeMap() is called when page is loaded.
 
 function initializeMap() {
   var sv = new google.maps.StreetViewService();
-  var locations;
 
 
   var mapOptions = {
@@ -146,7 +145,6 @@ function initializeMap() {
   processSVData(data, status) makes sure there is a streetview. If so, it sets 
   the pano and settings; otherwise, it recursively goes through until it finds one.
   */
-
   function processSVData(data, status) {
     if (status == google.maps.StreetViewStatus.OK) {
       var panorama = new google.maps.StreetViewPanorama(document.getElementById('pano'));
@@ -209,7 +207,7 @@ function initializeMap() {
     var lon = placeData.geometry.location.B; // longitude from the place service
     var name = placeData.formatted_address; // name of the place from the place service
     var bounds = window.mapBounds; // current boundaries of the map window
-    var address = lat + ',' + lon; // lat/lng for google maps background image
+    //var address = lat + ',' + lon; // lat/lng for google maps background image
     var pinImg = 'images/Map-Marker-Ball-Azure-icon.png'; // Image for the pins
 
     // marker is an object with additional data about the pin for a single location

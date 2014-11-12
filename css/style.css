@@ -221,7 +221,6 @@ ul {
 }
 
 
-
 /* Bar chart stuff */
 .chart div {
   font: 10px sans-serif;
@@ -258,7 +257,7 @@ span {
 }
 
 #footerContacts {
-  background-color: darkcyan;
+  background-color: #008B8B;
 }
 
 
@@ -305,10 +304,6 @@ span {
 }
 
 @media only screen and (min-width: 975px) {
-  .img-content:hover {
-    height: 300px;
-    width: 400px;
-  }
   .flex-item:hover {
     background-color: #252D38;
     font-size: 18px;
