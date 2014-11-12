@@ -7,6 +7,7 @@ var work = {
             "employer": "USBANK",
             "title": "Teller",
             "location": "9633 Lyndale Ave S, Bloomington MN",
+            "url": "http://www.usbank.com",
             "dates": "2012-2013",
             "description": "Sales, customer service, control of branch money"
         },
@@ -15,6 +16,7 @@ var work = {
             "title": "Summer Hire",
             "location": "459 3rd St, St Paul Park, MN 55071",
             "city": "St. Paul Park",
+            "url": "http://www.ntenergy.com/",
             "dates": ["Summer 2009", " Summer 2010"],
             "description": "general maintenance, lawn care, painting, fueling equipment/trucks"
         },
@@ -22,9 +24,10 @@ var work = {
 };
 
 work.display = function() {
+  $("#workExperience").append(HTMLworkStart);
   for (var job in work.jobs) {
-    $("#workExperience").append(HTMLworkStart);
     var formattedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
+    formattedEmployer = formattedEmployer.replace("%url%",work.jobs[job].url);
     var formattedTitle = HTMLworkTitle.replace("%data%",work.jobs[job].title);
     var formattedEmployerTitle = formattedEmployer + formattedTitle;
     $(".work-entry:last").append(formattedEmployerTitle);
@@ -91,20 +94,23 @@ var projects = {
     {
       "title": "Interactive Resume",
       "dates": "2014",
-      "description": "Learned Javascript and how to use it with HTML and CSS",
-      "images": ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
+      "description": "Learned Javascript, JSON, AJAX, and how to use them with HTML and CSS",
+      "url": "http://patricko10.github.io",
+      "images": ["images/interactiveresumeimg2.png", "images/interactiveresumeimg.png", "images/interactiveresumeimg3.png"]
     },
     {
     "title": "Mock Portfolio",
     "dates": "2014",
     "description": "Learned HTML and CSS by creating a responsive website.",
-    "images": ["images/mockimg (2).png", "images/mockimg.png", "images/mockcodeimg.png"]
+    "url": "http://patricko10.github.io",
+    "images": ["images/mockimg (2).png", "images/mockimg.png", "images/mockimg3.png"]
     },
     {
       "title": "CS101 project",
       "dates": "2014",
       "description": "Learned python while building a social network",
-      "images": ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
+      "url": "https://www.udacity.com/course/cs101",
+      "images": ["images/pythonimg1.png", "images/pythonimg2.png", "images/pythonimg3.png"]
     }
   ]
 };
@@ -113,6 +119,7 @@ projects.display = function() {
     for (var project in projects.projects) {
      $("#projects").append(HTMLprojectStart);
      var formattedProjectTitle = HTMLprojectTitle.replace("%data%",projects.projects[project].title);
+     formattedProjectTitle = formattedProjectTitle.replace("%url%", projects.projects[project].url);
      $(".project-entry:last").append(formattedProjectTitle);
      var formattedProjectDates = HTMLprojectDates.replace("%data%",projects.projects[project].dates);
      $(".project-entry:last").append(formattedProjectDates);
@@ -149,9 +156,9 @@ var education = {
     "name": "Normandale Community College",
     "city": "Bloomington, MN",
     "location": "Normandale Community College, Bloomington, MN",
-    "degree": "CS degree",
+    "degree": "CS Classes",
     "major": "Computer Science",
-    "dates": "2014-current",
+    "dates": "2014",
     "url": "http://www.normandale.edu"
   },
    {
@@ -166,33 +173,47 @@ var education = {
   ],
   "onlineSchools": [
   {
-    "title": "Intro to Computer Science",
-    "school": "Udacity",
-    "dates": "2014",
-    "url": "https://www.udacity.com/course/cs101",
-    "description": "Used python to learn how to build a search engine"
-  },
-  {
-    "title": "Javascript Syntax",
+    "title": "JavaScript Basics",
     "school": "Udacity",
     "dates": "2014",
     "url": "https://www.udacity.com/course/ud804",
-    "description": "Learned Javascript Basics"
+    "description": "Learned JavaScript fundamentals while building my interactive resume"
   },
   {
     "title": "Intro to HTML and CSS",
     "school": "Udacity",
     "dates": "2014",
     "url": "https://www.udacity.com/course/ud304",
-    "description": "Learned web responsiveness"
+    "description": "Learned how to approach page layout, how to break down a design mockup into page elements, and how to implement that in HTML and CSS."
+  },
+  {
+    "title": "Intro to Computer Science",
+    "school": "Udacity",
+    "dates": "2014",
+    "url": "https://www.udacity.com/course/cs101",
+    "description": "Learned python to build a search engine and a social network"
   }
   ]
 };
 
 education.display = function() {
+  $("#education").append(HTMLschoolStart);
+  // onlineSchools
+  $(".education-entry:last").append(HTMLonlineClasses);
+  for (var school in education.onlineSchools) {
+    var formattedTitle = HTMLonlineTitle.replace("%data%",education.onlineSchools[school].title);
+    formattedTitle = formattedTitle.replace("%url%", education.onlineSchools[school].url);
+    $(".education-entry:last").append(formattedTitle);
+    var formattedSchool = HTMLonlineSchool.replace("%data%",education.onlineSchools[school].school);
+    $(".education-entry:last").append(formattedSchool);
+    var formattedDates = HTMLonlineDates.replace("%data%",education.onlineSchools[school].dates);
+    $(".education-entry:last").append(formattedDates);
+    var formattedDescription = HTMLonlineDescription.replace("%data%", education.onlineSchools[school].description);
+    $(".education-entry:last").append(formattedDescription);
+  };
   // schools
+  $(".education-entry:last").append(HTMLschoolUniversity);
   for (var school in education.schools) {
-    $("#education").append(HTMLschoolStart);
     var formattedName =  HTMLschoolName.replace("%data%",education.schools[school].name);
     formattedName = formattedName.replace("%url%",education.schools[school].url);
     $(".education-entry:last").append(formattedName);
@@ -212,18 +233,6 @@ education.display = function() {
     else {
       $(".education-entry:last").append(formattedMajor);
     }
-  };
-  // onlineSchools
-  $(".education-entry:last").append(HTMLonlineClasses);
-  for (var school in education.onlineSchools) {
-    var formattedTitle = HTMLonlineTitle.replace("%data%",education.onlineSchools[school].title);
-    $(".education-entry:last").append(formattedTitle);
-    var formattedSchool = HTMLonlineSchool.replace("%data%",education.onlineSchools[school].school);
-    $(".education-entry:last").append(formattedSchool);
-    var formattedDates = HTMLonlineDates.replace("%data%",education.onlineSchools[school].dates);
-    $(".education-entry:last").append(formattedDates);
-    var formattedDescription = HTMLonlineDescription.replace("%data%", education.onlineSchools[school].description);
-    $(".education-entry:last").append(formattedDescription);
   }
 };
 
