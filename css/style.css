@@ -146,6 +146,19 @@ a {
    background-color: rgba(76, 212, 220, 0.9);
 }
 
+#nameRole {
+  position: fixed;
+  width: 100%;
+  background-color: rgb(128, 0, 7);
+}
+
+.header-emailMobile {
+  display: none;
+}
+
+.padding-left {
+  padding-left: 5%;
+}
 .mapbgimg {
     position: fixed;
     top: 0;
@@ -157,18 +170,12 @@ a {
     opacity: 1;
 }
 
-.coral {
-  background-color: #BCDAE8;
-  padding-bottom: 10px;
-  clear:both;
+.dark-red {
+  background-color: rgba(128, 0, 7, 0.7);
 }
 
 .dark-teal {
   background-color: rgba(0, 128, 97, 0.9);
-}
-
-.dark-teal-map {
-  background-color: rgba(0, 128, 97, 0.7);
 }
 
 .dark-gray {
@@ -186,7 +193,7 @@ a {
 }
 
 #header {
-    background-color: rgba(0, 128, 97, 0.7);
+    background-color: rgba(128, 0, 7, 0.7);
 }
 
 .flex-box {
@@ -212,12 +219,13 @@ ul {
   padding: 10px;
   width: 200px;
   display: none;
+  border-radius: 100%;
 }
 
 .img-content {
   padding: 10px;
-  width: 197px;
-  height: 148px;
+  width: 300px;
+  height: 200px;
 }
 
 
@@ -242,6 +250,7 @@ span {
   height: 100%;
   margin-left: 5%;
   margin-right: 5%;
+  margin-top: 15%;
 }
 
 #mapDiv {
@@ -253,7 +262,7 @@ span {
 #pano {
   height: 300px;
   width: 50%;
-  margin-top: 90px;
+  margin-top: 190px;
 }
 
 #footerContacts {
@@ -275,6 +284,10 @@ span {
   .biopic {
     width: 175px;
   }
+
+  #pano {
+    margin-top: 175px;
+  }
 }
 
 
@@ -288,18 +301,32 @@ span {
   .welcome-message {
     display: none;
   }
+  #nameRole {
+    position: relative;
+  }
+  .nameRole-contacts {
+    display: none;
+  }
   #header {
-    background-color: darkcyan;
     background-image: none;
   }
   #pano {
     display: none;
   }
+  #map {
+    margin-top: 0;
+  }
   #mapDiv {
-  height: 150px;
   width: 100%;
   margin-bottom: 35%;
   padding-bottom: 0;
+  }
+  .img-content {
+    width: 197px;
+    height: 148px;
+  }
+  .header-emailMobile {
+    display: inline-block;
   }
 }
 
@@ -310,11 +337,17 @@ span {
   }
 }
 
+@media only screen and (max-width: 975px) {
+  .ion-contacts {
+    display: none;
+  }
+
+}
+
 @media only screen and (min-width: 750px) {
   #skillsH3,
   #skills,
   .biopic {
     display: block;
   }
-
 }

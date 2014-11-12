@@ -54,16 +54,17 @@ var bio = {
     "linkedin": "https://www.linkedin.com/pub/patrick-orth/97/91a/221",
 		"location": "Edina, MN"
 	},
-	"welcomeMessage" : " Welcome to my resume",
+	"welcomeMessage" : " Welcome to my resume. I love learning new things, taking on new challenges, and exploring new roads.",
 	"skills" : ["Javascript", "HTML", "CSS", "Python"],
-	"bioPic" : "images/profilepic.jpg"
+	"bioPic" : "images/profilepic1.jpg"
 };
 
 bio.display = function() {
-    var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-    var formattedName = HTMLheaderName.replace("%data%", bio.name);
-    $("#header").prepend(formattedName + formattedRole);
-
+    var formattedRole = HTMLnameRoleRole.replace("%data%", bio.role);
+    var formattedName = HTMLnameRoleName.replace("%data%", bio.name);
+    var formattednameRoleMobile = HTMLnameRoleMobile.replace("%data%", bio.contacts.mobile);
+    var formattednameRoleEmail = HTMLnameRoleEmail.replace("%data%", bio.contacts.email);
+    $("#main").prepend(formattedName + formattedRole + formattednameRoleMobile + formattednameRoleEmail);
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
     var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
@@ -72,7 +73,7 @@ bio.display = function() {
     var formattedLinkedin = HTMLlinkedin.replace("%data%", bio.contacts.linkedin);
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
     $("#topContacts").append(formattedMobile + formattedEmail + formattedGitHub + formattedTwitter + formattedLinkedin + formattedBlog + formattedLocation);
-    $("#footerContacts").append(formattedMobile + formattedEmail + formattedGitHub + formattedLinkedin + formattedTwitter + formattedLocation);
+    $("#footerContacts").append(formattedMobile + formattedEmail + formattedGitHub + formattedLinkedin + formattedTwitter);
     var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
     $("#header").append(formattedBioPic);
     var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
@@ -238,6 +239,14 @@ education.display = function() {
 
 education.display();
 
+var skillsChart = {
+  "languages": ["JavaScript, HTML, CSS, Python"]
+}
+
+skillsChart.display = function() {
+
+}
+
 function inName(name) {
     name = name.split(" ")
     console.log(name);
@@ -247,7 +256,7 @@ function inName(name) {
 }
 
 
-$("#name").append(internationalizeButton);
+// $("#name").append(internationalizeButton);
 
 $(document).click(function(loc) {
     var x = loc.pageX;

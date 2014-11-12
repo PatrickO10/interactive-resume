@@ -16,12 +16,14 @@ Cameron Pittman
 These are HTML strings. As part of the course, you'll be using JavaScript functions
 replace the %data% placeholder text you see in them.
 */
-var HTMLheaderName = "<h1 id='name'>%data%</h1>";
-var HTMLheaderRole = "<span class='white-text'>%data%</span><hr/>";
+var HTMLnameRoleName = "<div id='nameRole'><h1 id='name' class='padding-left'>%data%</h1>";
+var HTMLnameRoleRole = "<span class='white-text'>%data%</span>";
+var HTMLnameRoleMobile = "<span class='nameRole-contacts'><span class='white-text ion-contacts'><i class='ion-android-call'></i> mobile</span><a href='tel: +1-612-203-1916' class='contacts-a'><span class='light-teal-text'>%data%</span></a></span>";
+var HTMLnameRoleEmail = "<span class='nameRole-contacts'><span class='white-text ion-contacts'><i class='ion-email'></i> email</span><a href='mailto:patrickorth10@gmail.com' class='contacts-a'><span class='light-teal-text'>%data%</span></a></span></span></span><hr/></div>";
 
 var HTMLcontactGeneric = "<li class='flex-item'><span class='white-text'>%contact%</span><span class='light-teal-text'>%data%</span></li>";
-var HTMLmobile = "<li class='flex-item'><span class='white-text'><i class='ion-android-call'></i> mobile</span><a href='tel: +1-612-203-1916' class='contacts-a'><span class='light-teal-text'>%data%</span></a></li>";
-var HTMLemail = "<li class='flex-item'><span class='white-text'><i class='ion-email'></i> email</span><a href='mailto:patrickorth10@gmail.com' class='contacts-a'><span class='light-teal-text'>%data%</span></a></li>";
+var HTMLmobile = "<li class='flex-item header-emailMobile'><span class='white-text'><i class='ion-android-call'></i> mobile</span><a href='tel: +1-612-203-1916' class='contacts-a'><span class='light-teal-text'>%data%</span></a></li>";
+var HTMLemail = "<li class='flex-item header-emailMobile'><span class='white-text'><i class='ion-email'></i> email</span><a href='mailto:patrickorth10@gmail.com' class='contacts-a'><span class='light-teal-text'>%data%</span></a></li>";
 var HTMLtwitter = "<li class='flex-item'><span class='white-text'><a href='%data%' class='contacts-a'><i class='ion-social-twitter'></i> twitter</a></span></li>";
 var HTMLgithub = "<li class='flex-item'><span class='white-text'><a href='%data%' class='contacts-a'><i class='ion-social-github'></i> github</a></span></li>";
 var HTMLblog = "<li class='flex-item'><span class='white-text'><a href='%data%' class='contacts-a'><i class='ion-android-book'></i> blog</a></span></li>";
@@ -64,6 +66,9 @@ var HTMLonlineSchool = " - %data%</a>";
 var HTMLonlineDates = "<div class='date-text'>%data%</div>";
 var HTMLonlineDescription = "<p><br>%data%</p>"
 
+
+var HTMLskillsChart = "<div class='"
+
 var internationalizeButton = "<button>Internationalize</button>";
 var googleMap = "<div id='map'></div>";
 var HTMLmapbgImg = "<img class='mapbgimg' src='%data%' alt='map background image'>"; // var that will add background image to mapDiv
@@ -73,13 +78,14 @@ var HTMLmapbgImg = "<img class='mapbgimg' src='%data%' alt='map background image
 The International Name challenge in Lesson 2 where you'll create a function that will need this 
 helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
 */
+/*
 $(document).ready(function() {
   $('button').click(function() {
     var iName = inName('Patrick Orth') || function(){};
     $('#name').html(iName);  
   });
 })
-
+*/
 
 /*
 The next few lines about clicks are for the Collecting Click Locations quiz in Lesson 2.
