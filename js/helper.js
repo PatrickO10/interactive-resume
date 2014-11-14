@@ -66,26 +66,11 @@ var HTMLonlineSchool = " - %data%</a>";
 var HTMLonlineDates = "<div class='date-text'>%data%</div>";
 var HTMLonlineDescription = "<p><br>%data%</p>"
 
-
-var HTMLskillsChart = "<div class='"
-
 var internationalizeButton = "<button>Internationalize</button>";
 var googleMap = "<div id='map'></div>";
-var HTMLmapbgImg = "<img class='mapbgimg' src='%data%' alt='map background image'>"; // var that will add background image to mapDiv
+// var that will add background image to mapDiv
+var HTMLmapbgImg = "<img class='mapbgimg' src='%data%' alt='map background image'>"; 
 
-
-/*
-The International Name challenge in Lesson 2 where you'll create a function that will need this 
-helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
-*/
-/*
-$(document).ready(function() {
-  $('button').click(function() {
-    var iName = inName('Patrick Orth') || function(){};
-    $('#name').html(iName);  
-  });
-})
-*/
 
 /*
 The next few lines about clicks are for the Collecting Click Locations quiz in Lesson 2.
@@ -142,7 +127,7 @@ function initializeMap() {
   function svBackground() {
     // streetviewUrl gets the url where the streetview is located
     var streetviewUrl = 'https://maps.googleapis.com/maps/api/streetview?size=640x400&pano=' + panoID + '&pitch=-0.76' + '';
-    console.log(streetviewUrl);
+    console.log(streetviewUrl); // allows you to view the image in console
     var formattedImg = HTMLmapbgImg.replace('%data%', streetviewUrl); // replaces data
     $('body').append(formattedImg); // appends it to body
   }
@@ -163,11 +148,15 @@ function initializeMap() {
       });
       panorama.setVisible(true);
       if (meters != 50) {
-        alert('Street View data not found for this location, but here is a Street View data ' + meters + ' meters near it.');
+        alert('Street View data not found for this location, but here is a Street View data around ' + meters + ' meters near it.');
       }
     } else {
-        meters = meters + 50; // increases the meters to search wider.
-        sv.getPanoramaByLocation(eventLoc, meters, processSVData);
+        meters = meters + 50; // Increases the meters to search wider.
+        if (meters < 5000) { // Stops the recursion if meters is above 5000.
+        sv.getPanoramaByLocation(eventLoc, meters, processSVData);  // If it didn't work the first time, try a second time or a third!
+      } else {
+        alert("Street View data not found for this location.");
+      }
     }
   }
 
@@ -213,7 +202,6 @@ function initializeMap() {
     var lon = placeData.geometry.location.B; // longitude from the place service
     var name = placeData.formatted_address; // name of the place from the place service
     var bounds = window.mapBounds; // current boundaries of the map window
-    //var address = lat + ',' + lon; // lat/lng for google maps background image
     var pinImg = 'images/Map-Marker-Ball-Azure-icon.png'; // Image for the pins
 
     // marker is an object with additional data about the pin for a single location

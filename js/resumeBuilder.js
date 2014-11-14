@@ -1,4 +1,4 @@
-// For each section I put JSON, display function, and calling the function
+// For each section I put JSON, display function, and then called the function
 // because I want the code to be next to each other when working on them.
 
 var work = {
@@ -238,25 +238,6 @@ education.display = function() {
 };
 
 education.display();
-
-var skillsChart = {
-  "languages": ["JavaScript, HTML, CSS, Python"]
-}
-
-skillsChart.display = function() {
-
-}
-
-function inName(name) {
-    name = name.split(" ")
-    console.log(name);
-    name[1] = name[1].toUpperCase(); 
-    name[0] = name[0][0].toUpperCase() + name[0].slice(1).toLowerCase();
-    return name[0] + " " + name[1];
-}
-
-
-// $("#name").append(internationalizeButton);
 
 $(document).click(function(loc) {
     var x = loc.pageX;
