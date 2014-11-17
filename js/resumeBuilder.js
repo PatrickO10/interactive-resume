@@ -97,7 +97,7 @@ var projects = {
       "dates": "2014",
       "description": "Learned Javascript, JSON, AJAX, and how to use them with HTML and CSS",
       "url": "http://patricko10.github.io",
-      "images": ["images/interactiveresumeimg2.png", "images/interactiveresumeimg.png", "images/interactiveresumeimg3.png"]
+      "images": ["images/interactiveresumeimg1.png", "images/interactiveresumeimg.png", "images/interactiveresumecert.png"]
     },
     {
     "title": "Mock Portfolio",
