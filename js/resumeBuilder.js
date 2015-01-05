@@ -46,7 +46,7 @@ var bio = {
 	"name": "Patrick Orth",
 	"role": "Web Developer",
 	"contacts": {
-    "mobile": "612-203-1916",
+    "mobile": "612-424-9883",
 		"email": "patrickorth10@gmail.com",
 		"github": "https://github.com/PatrickO10",
 		"twitter": "https://twitter.com/patrick_orth",
@@ -89,7 +89,7 @@ bio.display = function() {
 
 bio.display();
 
-// Projects 
+// Projects
 var projects = {
     "projects" : [
     {
@@ -129,12 +129,12 @@ projects.display = function() {
 
      if (projects.projects[project].images.length > 0) {
       for (var image in projects.projects[project].images) {
-       var formattedImage = HTMLprojectImage.replace("%data%",projects.projects[project].images[image]); 
+       var formattedImage = HTMLprojectImage.replace("%data%",projects.projects[project].images[image]);
        $(".project-entry:last").append(formattedImage);
     }
 
         }
- 
+
     }
 };
 
