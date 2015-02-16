@@ -1,11 +1,11 @@
 /*
 
 This file contains all of the code running in the background that makes resumeBuilder.js possible.
- We call these helper functions 
+ We call these helper functions
 because they support your code in this course.
 
 Don't worry, you'll learn what's going on in this file throughout the course.
- You won't need to make any changes to it until you 
+ You won't need to make any changes to it until you
 start experimenting with inserting a Google Map in Problem Set 3.
 
 Cameron Pittman
@@ -18,17 +18,17 @@ replace the %data% placeholder text you see in them.
 */
 var HTMLnameRoleName = "<div id='nameRole'><h1 id='name' class='padding-left'>%data%</h1>";
 var HTMLnameRoleRole = "<span class='white-text'>%data%</span>";
-var HTMLnameRoleMobile = "<span class='nameRole-contacts'><span class='white-text ion-contacts'><i class='ion-android-call'></i> mobile</span><a href='tel: +1-612-203-1916' class='contacts-a'><span class='light-teal-text'>%data%</span></a></span>";
+var HTMLnameRoleMobile = "<span class='nameRole-contacts'><span class='white-text ion-contacts'><i class='ion-android-call'></i> mobile</span><a href='tel: +1-612-424-9883' class='contacts-a'><span class='light-teal-text'>%data%</span></a></span>";
 var HTMLnameRoleEmail = "<span class='nameRole-contacts'><span class='white-text ion-contacts'><i class='ion-email'></i> email</span><a href='mailto:patrickorth10@gmail.com' class='contacts-a'><span class='light-teal-text'>%data%</span></a></span></span></span><hr/></div>";
 
 var HTMLcontactGeneric = "<li class='flex-item'><span class='white-text'>%contact%</span><span class='light-teal-text'>%data%</span></li>";
-var HTMLmobile = "<li class='flex-item header-emailMobile'><span class='white-text'><i class='ion-android-call'></i> mobile</span><a href='tel: +1-612-203-1916' class='contacts-a'><span class='light-teal-text'>%data%</span></a></li>";
+var HTMLmobile = "<li class='flex-item header-emailMobile'><span class='white-text'><i class='ion-android-call'></i> mobile</span><a href='tel: +1-612-424-9883' class='contacts-a'><span class='light-teal-text'>%data%</span></a></li>";
 var HTMLemail = "<li class='flex-item header-emailMobile'><span class='white-text'><i class='ion-email'></i> email</span><a href='mailto:patrickorth10@gmail.com' class='contacts-a'><span class='light-teal-text'>%data%</span></a></li>";
-var HTMLtwitter = "<li class='flex-item'><span class='white-text'><a href='%data%' class='contacts-a'><i class='ion-social-twitter'></i> twitter</a></span></li>";
-var HTMLgithub = "<li class='flex-item'><span class='white-text'><a href='%data%' class='contacts-a'><i class='ion-social-github'></i> github</a></span></li>";
-var HTMLblog = "<li class='flex-item'><span class='white-text'><a href='%data%' class='contacts-a'><i class='ion-android-book'></i> blog</a></span></li>";
-var HTMLlocation = "<li class='flex-item'><span class='white-text' class='contacts-a'><i class='ion-map'></i> location</span><span class='light-teal-text'>%data%</span></li>";
-var HTMLlinkedin = "<li class='flex-item'><span class='white-text'><a href='%data%' class='contacts-a'><i class='ion-social-linkedin'></i> linkedIn</a></span></li>";
+var HTMLtwitter = "<li class='flex-item'><span class='white-text'><a href='%data%' class='contacts-a' target='_blank'><i class='ion-social-twitter'></i> twitter</a></span></li>";
+var HTMLgithub = "<li class='flex-item'><span class='white-text'><a href='%data%' class='contacts-a' target='_blank'><i class='ion-social-github'></i> github</a></span></li>";
+var HTMLblog = "<li class='flex-item'><span class='white-text'><a href='%data%' class='contacts-a' target='_blank'><i class='ion-android-book'></i> blog</a></span></li>";
+var HTMLlocation = "<li class='flex-item'><span class='white-text' class='contacts-a' target='_blank'><i class='ion-map'></i> location</span><span class='light-teal-text'>%data%</span></li>";
+var HTMLlinkedin = "<li class='flex-item'><span class='white-text'><a href='%data%' class='contacts-a' target='_blank'><i class='ion-social-linkedin'></i> linkedIn</a></span></li>";
 
 
 var HTMLbioPic = "<img src='%data%' class='biopic'>";
@@ -38,21 +38,21 @@ var HTMLskillsStart = "<h3 id='skillsH3'>Skills at a Glance:</h3><ul id='skills'
 var HTMLskills = "<li class='flex-item-skills'><span class='light-teal-text'>%data%</span></li>"; // changed it to flex-item-skills so it wouldn't have the hover
 
 var HTMLworkStart = "<div class='work-entry'></div>";
-var HTMLworkEmployer = "<a href='%url%' class='text-large'>%data%";
+var HTMLworkEmployer = "<a href='%url%' class='text-large' target='_blank'>%data%";
 var HTMLworkTitle = " - %data%</a>";
 var HTMLworkDates = "<div class='date-text'>%data%</div>";
 var HTMLworkLocation = "<div class='location-text'>%data%</div>";
 var HTMLworkDescription = "<p class='text-medium'><br>%data%</p>";
 
 var HTMLprojectStart = "<div class='project-entry'></div>";
-var HTMLprojectTitle = "<a href='%url%' class='text-large'>%data%</a>";
+var HTMLprojectTitle = "<a href='%url%' class='text-large' target='_blank'>%data%</a>";
 var HTMLprojectDates = "<div class='date-text'>%data%</div>";
 var HTMLprojectDescription = "<p><br>%data%</p>";
 var HTMLprojectImage = "<img src='%data%' class='img-content' alt='project image content'>";
 
 var HTMLschoolStart = "<div class='education-entry'></div>";
 var HTMLschoolUniversity = "<h3>University and Colleges Attended</h3>";
-var HTMLschoolName = "<a href='%url%' class='text-large'>%data%";
+var HTMLschoolName = "<a href='%url%' class='text-large' target='_blank'>%data%";
 var HTMLschoolDegree = " --  %data%</a>";
 var HTMLschoolDates = "<div class='date-text'>%data%</div>";
 var HTMLschoolLocation = "<div class='location-text'>%data%</div>";
@@ -61,15 +61,15 @@ var HTMLschoolMinor = "<em><br>Minor: %data%</em>";  // added minor
 
 
 var HTMLonlineClasses = "<h3>Online Classes</h3>";
-var HTMLonlineTitle = "<a href='%url%' class='text-large'>%data%";
+var HTMLonlineTitle = "<a href='%url%' class='text-large' target='_blank'>%data%";
 var HTMLonlineSchool = " - %data%</a>";
 var HTMLonlineDates = "<div class='date-text'>%data%</div>";
-var HTMLonlineDescription = "<p><br>%data%</p>"
+var HTMLonlineDescription = "<p><br>%data%</p>";
 
 var internationalizeButton = "<button>Internationalize</button>";
 var googleMap = "<div id='map'></div>";
 // var that will add background image to mapDiv
-var HTMLmapbgImg = "<img class='mapbgimg' src='%data%' alt='map background image'>"; 
+var HTMLmapbgImg = "<img class='mapbgimg' src='%data%' alt='map background image'>";
 
 
 /*
@@ -121,7 +121,7 @@ function initializeMap() {
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
 
   /*
-  svBackground(address) sets the background of a streetview when you click on a pin, 
+  svBackground(address) sets the background of a streetview when you click on a pin,
   appending it to the body.
   */
   function svBackground() {
@@ -133,7 +133,7 @@ function initializeMap() {
   }
 
   /*
-  processSVData(data, status) makes sure there is a streetview. If so, it sets 
+  processSVData(data, status) makes sure there is a streetview. If so, it sets
   the pano and settings; otherwise, it recursively goes through until it finds one.
   */
   function processSVData(data, status) {
@@ -198,8 +198,10 @@ function initializeMap() {
   function createMapMarker(placeData) {
 
     // The next lines save location data from the search result object to local variables
-    var lat = placeData.geometry.location.k; // latitude from the place service
-    var lon = placeData.geometry.location.D; // longitude from the place service
+/*    var lat = placeData.geometry.location.k;
+    var lon = placeData.geometry.location.D; */
+    var lat = placeData.geometry.location.lat(); // latitude from the place service
+    var lon = placeData.geometry.location.lng(); // longitude from the place service
     var name = placeData.formatted_address; // name of the place from the place service
     var bounds = window.mapBounds; // current boundaries of the map window
     var pinImg = 'images/Map-Marker-Ball-Azure-icon.png'; // Image for the pins
@@ -245,7 +247,7 @@ function initializeMap() {
   */
   function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-      createMapMarker(results[0])
+      createMapMarker(results[0]);
     }
   }
 
@@ -266,14 +268,14 @@ function initializeMap() {
       // the search request object
       var request = {
         query: locations[place]
-      }
+      };
 
-      // Actually searches the Google Maps API for location data and runs the callback 
+      // Actually searches the Google Maps API for location data and runs the callback
       // function with the search results after each search.
       service.textSearch(request, callback);
     }
   }
-  
+
 
   // Sets the boundaries of the map based on pin locations
   window.mapBounds = new google.maps.LatLngBounds();
@@ -285,7 +287,7 @@ function initializeMap() {
   // the locations array
   pinPoster(locations);
 
-};
+}
 
 /*
 Uncomment all the code below when you're ready to implement a Google Map!
@@ -294,7 +296,7 @@ Uncomment all the code below when you're ready to implement a Google Map!
 // Calls the initializeMap() function when the page loads
 window.addEventListener('load', initializeMap);
 
-// Vanilla JS way to listen for resizing of the window 
+// Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
 window.addEventListener('resize', function(e) {
   // Make sure the map bounds get updated on page resize
